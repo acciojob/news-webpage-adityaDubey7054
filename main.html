@@ -3,47 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic News Webpage</title>
-    <!-- Link to the external stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <title>Shaw's News</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px 0; /* Add vertical padding */
+            background-color: #f5f5f5; /* Body background color */
+        }
+
+        /* Main container for the news layout */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden; /* Ensures the child elements respect the border radius */
+            margin: 0 auto; /* Center the container horizontally */
+        }
+
+        /* Header styling */
+        .header {
+            background-color: #011e29; /* Header background color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        /* Main content area styling */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+            padding: 20px;
+            gap: 20px; /* Use gap for spacing between columns */
+            align-items: flex-start;
+        }
+
+        /* Shared heading styles */
+        .latest-news-section h3, .main-article-section h2, .pictorial-news-section h3 {
+            margin-top: 0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Latest News Section styling */
+        .latest-news-section {
+            flex: 1; /* Takes up 1 part of the available space */
+            min-width: 200px; /* Minimum width before wrapping */
+            background-color: #f5f5f5; /* Light grey background for the card */
+            border-radius: 8px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .latest-news-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .latest-news-section li {
+            margin-bottom: 10px;
+        }
+
+        /* Main Article Section */
+        .main-article-section {
+            flex: 2; /* Takes up 2 parts of the available space, making it wider */
+            min-width: 300px;
+            box-sizing: border-box;
+        }
+        
+        /* Pictorial News Section styling */
+        .pictorial-news-section {
+            flex: 1; /* Takes up 1 part of the available space */
+            min-width: 200px;
+            background-color: #f5f5f5; /* Light grey background for the card */
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .pictorial-news-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .pictorial-news-section img:not(:last-child) {
+            margin-bottom: 10px; /* Spacing between images */
+        }
+    </style>
 </head>
 <body>
 
-    <!-- 1. Header Section -->
-    <header class="header">
-        <h1>THE NEWS</h1>
-    </header>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>Shaw's News</h1>
+        </header>
 
-    <!-- Main container to hold the two sections side-by-side -->
-    <div class="main-content">
-        
-        <!-- 2. Latest News Section (Sidebar) -->
-        <div class="latest-news-section">
-            <h3>Latest News</h3>
-            <ul>
-                <li>Breaking: New Tech Summit Announced for Fall 2025</li>
-                <li>Local Sports Team Wins Championship in a Thriller</li>
-                <li>Weather Update: Heatwave Expected This Weekend</li>
-            </ul>
+        <!-- Main Content Area with Flexbox layout -->
+        <div class="main-content">
+
+            <!-- Latest News Section -->
+            <div class="latest-news-section">
+                <h3>Latest News Articles</h3>
+                <ul>
+                    <li>Article 1</li>
+                    <li>Article 2</li>
+                    <li>Article 3</li>
+                </ul>
+            </div>
+
+            <!-- Main Article Section -->
+            <div class="main-article-section">
+                <h2>Main Article</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna eu fringilla malesuada,
+                    lectus enim feugiat turpis, vitae semper nunc quam vel quam. Proin euismod, magna eu fringilla malesuada,
+                    justo erat malesuada magna, eu fringilla mauris quam eget justo.
+                </p>
+            </div>
+
+            <!-- Pictorial News Section -->
+            <div class="pictorial-news-section">
+                <h3>Pictorial News</h3>
+                <!-- Images from user -->
+                <img src="https://images.hindustantimes.com/img/2023/01/29/550x309/delhi_rains_1674974112847_1674981888135_1674981888135.jpeg" alt="Pictorial News Image One">
+                <img src="https://images.hindustantimes.com/img/2023/01/29/550x309/ADANI-INDIA-GAUTAM-ADANI-0_1675011651023_1675011651023_1675011672003_1675011672003.JPG" alt="Pictorial News Image Two">
+                <img src="https://images.hindustantimes.com/img/2023/01/29/550x309/FRANCE-REFORM-PENSIONS-31_1675022359706_1675022359706_1675022383851_1675022383851.JPG" alt="Pictorial News Image Three">
+            </div>
+
         </div>
-
-        <!-- 3. Pictorial News Section (Main Content) -->
-        <div class="pictorial-news-section">
-            <h2>Pictorial News</h2>
-            <div class="news-item">
-                <img src="https://images.hindustantimes.com/img/2023/01/29/550x309/delhi_rains_1674974112847_1674981888135_1674981888135.jpeg" alt="Rainy day in Delhi">
-                <p>Heavy rains lash parts of Delhi, bringing respite from the heat but causing traffic snarls across the city.</p>
-            </div>
-            <div class="news-item">
-                <img src="https://images.hindustantimes.com/img/2023/01/29/550x309/ADANI-INDIA-GAUTAM-ADANI-0_1675011651023_1675011651023_1675011672003_1675011672003.JPG" alt="Gautam Adani">
-                <p>Adani Group shares see a volatile session in the market following the release of a new financial report.</p>
-            </div>
-            <div class="news-item">
-                <img src="https://images.hindustantimes.com/img/2023/01/29/550x309/FRANCE-REFORM-PENSIONS-31_1675022359706_1675022359706_1675022383851_1675022383851.JPG" alt="Protests in France">
-                <p>Massive protests erupt across France over the government's proposed pension reforms.</p>
-            </div>
-        </div>
-
     </div>
 
 </body>
